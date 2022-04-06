@@ -1,6 +1,24 @@
 {
   "name": "@sebastiandg7/prepend-http",
   "version": "1.0.0",
+  "description": "Prepend `https://` to humanized URLs like `sindresorhus.com` and `localhost`",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastiandg7/prepend-http.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastiandg7/prepend-http/issues"
+  },
+  "keywords": [
+    "nx",
+    "utils",
+    "url",
+    "urls",
+    "urls-utils",
+    "https",
+    "http"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

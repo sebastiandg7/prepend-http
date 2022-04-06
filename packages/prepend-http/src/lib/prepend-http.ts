@@ -1,4 +1,13 @@
-export function prependHttp(url: string, { https = true } = {}): string {
+export interface PrependHttpOptions {
+  https?: boolean;
+}
+
+export function prependHttp(
+  url: string,
+  options: PrependHttpOptions = { https: true }
+): string {
+  const { https } = options;
+
   if (typeof url !== 'string') {
     throw new TypeError(
       `Expected \`url\` to be of type \`string\`, got \`${typeof url}\``
@@ -11,5 +20,8 @@ export function prependHttp(url: string, { https = true } = {}): string {
     return cleanedUrl;
   }
 
-  return cleanedUrl.replace(/^(?!(?:\w+?:)?\/\/)/, https ? 'https://' : 'http://');
+  return cleanedUrl.replace(
+    /^(?!(?:\w+?:)?\/\/)/,
+    https ? 'https://' : 'http://'
+  );
 }
