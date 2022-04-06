@@ -1,0 +1,33 @@
+{
+  "root": "packages/prepend-http",
+  "sourceRoot": "packages/prepend-http/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/prepend-http",
+        "main": "packages/prepend-http/src/index.ts",
+        "tsConfig": "packages/prepend-http/tsconfig.lib.json",
+        "assets": ["packages/prepend-http/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/prepend-http/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/prepend-http"],
+      "options": {
+        "jestConfig": "packages/prepend-http/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
